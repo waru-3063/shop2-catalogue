@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Checkout</title>
+<link rel="stylesheet" href="checkout2.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Checkout</h1>
+
+    <div id="checkoutItems"></div>
+    <h2>Total: $<span id="total"></span></h2>
+
+    <h3>Customer Info</h3>
+    <input id="name" placeholder="Name">
+    <input id="phone" placeholder="Phone (MPESA)">
+    
+    <button onclick="placeOrder()">Place Order</button>
+</div>
+
+<script src="script4.js"></script>
+
+<script>
+function renderCheckout() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let total = 0;
+
+    const div = document.getElementById("checkoutItems");
+
+    cart.forEach(item => {
+        const p = products.find(x => x.id === item.id);
+        if (!p) return;
+
+        total += p.price * item.qty;
+        div.innerHTML += `<p>${p.name} x ${item.qty}</p>`;
+    });
+
+    document.getElementById("total").innerText = total;
+}
+
+function placeOrder() {
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+
+    if (!name || !phone) {
+        alert("Fill all fields");
+        return;
+    }
+
+    alert("✅ Order placed (MPESA simulated)");
+    localStorage.removeItem("cart");
+    window.location.href = "index.html";
+}
+
+renderCheckout();
+</script>
+
+</body>
+</html>

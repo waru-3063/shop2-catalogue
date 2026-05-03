@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop</title>
+<link rel="stylesheet" href="style4.css">
+</head>
+<body>
+
+<header>
+    <h1>🛍️ My Shop</h1>
+
+    <input type="text" id="search" placeholder="Search products...">
+
+    <select id="category">
+        <option value="all">All</option>
+        <option value="electronics">Electronics</option>
+        <option value="fashion">Fashion</option>
+        <option value="food">Food</option>
+    </select>
+
+    <div class="cart">
+        🛒 <span id="cartCount">0</span>
+    </div>
+</header>
+
+<div class="products" id="productList"></div>
+
+<div class="cart-section">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <h3>Total: $<span id="totalPrice">0</span></h3>
+    <button onclick="clearCart()">Clear Cart</button>
+    <button onclick="goToCheckout()">Checkout</button>
+</div>
+
+<script src="script4.js"></script>
+</body>
+</html>
