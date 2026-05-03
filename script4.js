@@ -97,11 +97,11 @@ function renderCart() {
 
 function viewProduct(id) {
     localStorage.setItem("selectedProduct", id);
-    window.location.href = "product.html";
+    window.location.href = "product2.html";
 }
 
 function goToCheckout() {
-    window.location.href = "checkout.html";
+    window.location.href = "checkout2.html";
 }
 
 // Filters
